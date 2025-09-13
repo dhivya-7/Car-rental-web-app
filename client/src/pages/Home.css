@@ -1,0 +1,121 @@
+/* Home.css - styles for hero, yellow bar, suggestions, and map */
+
+.hero-section {
+   position: relative;
+  background: url("/img/hero1.jpg") no-repeat center center/cover; 
+  padding: 40px 20px;
+}
+
+.hero-overlay {
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.35);
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #ffd700;
+  padding: 12px;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 12px auto;
+  flex-wrap: wrap;
+}
+
+.search-field {
+  position: relative;
+  width: 280px;
+}
+
+.search-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+}
+
+/* suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  z-index: 1000;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+}
+
+.suggestions li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.suggestions li:hover {
+  background: #f1f1f1;
+}
+
+/* other inputs */
+.search-bar input[type="date"],
+.search-bar input[type="time"],
+.search-bar input[type="number"],
+.search-bar input[type="text"]:not(.search-field input) {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* search button */
+.search-btn {
+  background: #007bff;
+  color: #fff;
+  padding: 9px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* map controls (pickup/dropoff toggle) */
+.map-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.map-controls button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.map-controls button.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* map container */
+.hero-map {
+  max-width: 1200px;
+  margin: 12px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}

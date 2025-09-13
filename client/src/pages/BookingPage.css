@@ -1,0 +1,76 @@
+.booking-page {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+}
+
+.booking-left {
+  flex: 1;
+  border-right: 2px solid #eee;
+  padding-right: 30px;
+}
+
+.booking-left img.car-image {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+}
+
+.booking-left h2 {
+  margin: 15px 0;
+}
+
+.booking-left .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.booking-right {
+  flex: 1;
+}
+
+.booking-right h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.booking-right p {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.booking-form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.book-btn {
+  background: #f4c430;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #e6b800;
+}

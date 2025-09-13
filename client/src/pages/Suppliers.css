@@ -1,0 +1,82 @@
+/* ===== HERO SECTION ===== */
+.hero-suppliers {
+  background: url("/img/hero3.jpg") center/cover no-repeat;
+  min-height: 250px;
+  padding: 60px 20px;
+}
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.hero-subtitle {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* ===== SUPPLIERS GRID ===== */
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.card img {
+  max-height: 70px;
+  object-fit: contain;
+}
+
+/* ===== FORM SECTIONS (Partner + Newsletter) ===== */
+.form-section {
+  background: #f9f9f9;
+  padding: 30px 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-top: 40px;
+}
+.form-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.form-section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===== INPUTS & BUTTONS ===== */
+.form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+.btn {
+  border-radius: 10px;
+  font-size: 0.95rem;
+  padding: 10px 16px;
+}
+
+/* ===== PARTNER FORM SPECIFIC ===== */
+.partner-form textarea {
+  min-height: 100px;
+}
+.partner-form label {
+  font-weight: 500;
+}
+
+/* ===== NEWSLETTER FORM SPECIFIC ===== */
+.newsletter-form form {
+  max-width: 500px;
+}
+.newsletter-form input {
+  flex: 1;
+}
+.newsletter-form button {
+  min-width: 120px;
+}

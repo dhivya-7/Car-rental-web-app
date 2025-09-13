@@ -1,0 +1,66 @@
+.hero-search-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hero-background {
+  height: 350px;
+  background: url("/img/hero2.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.yellow-bar {
+  background: #ffd700;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.yellow-bar input,
+.yellow-bar button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.yellow-bar button {
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+.yellow-bar button:hover {
+  background: #0056b3;
+}
+
+.map-section {
+  margin-top: 20px;
+}
+
+.map-buttons {
+  margin-bottom: 10px;
+}
+
+.map-buttons button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.map-buttons button.active {
+  background: #007bff;
+  color: #fff;
+}

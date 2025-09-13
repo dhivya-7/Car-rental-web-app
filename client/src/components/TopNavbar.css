@@ -1,0 +1,40 @@
+/* Navbar styling */
+#topNavbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+#topNavbar .brand {
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  font-size: 1.2rem;
+}
+
+#topNavbar .btn {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Booking dropdown */
+.booking-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  width: 300px;
+  border-radius: 8px;
+  z-index: 9;
+}
+
+.booking-dropdown.show {
+  display: block;
+}

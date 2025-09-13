@@ -1,0 +1,59 @@
+:root{ --blue:#003049; --blue2:#0d6efd; --yellow:#ffd700; --bg:#f6f7fb; --text:#111 }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{ font-family: system-ui, Arial, sans-serif; background: var(--bg); color: var(--text); margin:0 }
+body.dark-mode{ background:#121212; color:#eaeaea }
+
+
+/* Top navbar */
+#topNavbar{ position:sticky; top:0; z-index:1000; height:70px; background: var(--blue); 
+  color:#fff; display:flex; align-items:center; justify-content:space-between;} 
+
+#topNavbar .brand{ color:#fff; text-decoration:none; font-weight:700; font-size:20px }
+#topNavbar .logo{ height:65px }
+body.dark-mode #topNavbar{ background:#1f1f1f }
+
+
+/* Second navbar */
+#secondNavbar{ background:#fff; border-bottom:1px solid rgba(0,0,0,.05); }
+#secondNavbar a{ color:#222; text-decoration:none; font-weight:600; font-size: 23px; }
+#secondNavbar a.active{ color: var(--blue2) }
+body.dark-mode #secondNavbar{ background:#1a1a1a; border-color:#2a2a2a }
+body.dark-mode #secondNavbar a{ color:#ddd }
+
+
+/* Hero */
+#hero{ min-height: 70vh; background:url('/img/hero1.jpg') center/cover no-repeat; display:flex; 
+  align-items:center; justify-content:center }
+#hero .hero-overlay{ width: min(1100px, 95%); margin:auto }
+.text-shadow{ text-shadow: 0 2px 12px rgba(0,0,0,.65) }
+
+
+/* Booking box */
+.booking-box{ background: var(--yellow); border-radius:14px; padding:16px; box-shadow: 0 6px 20px rgba(0,0,0,.25) }
+.booking-box .form-control, .booking-box .input-group-text{ height: 46px }
+.booking-box .input-group-text{ background:#fff }
+
+
+/* Auth modal */
+.modal-backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:center;
+   justify-content:center; z-index:1200 }
+.auth-card{ width: min(420px, 92%); background:#fff; border-radius:14px; padding:18px;
+   box-shadow:0 10px 30px rgba(0,0,0,.3) }
+body.dark-mode .auth-card{ background:#1f1f1f; color:#fff }
+
+
+/* Utilities */
+.btn-group>.btn{ border-radius:999px }
+
+
+/* Make inputs nice on mobile */
+@media (max-width: 992px){
+#hero{ padding: 32px 0 }
+}
