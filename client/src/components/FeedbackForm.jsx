@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./feedback.css";
+import "./Feedback.css";
 
 export default function FeedbackForm({ onFeedbackAdded }) {
   const [formData, setFormData] = useState({
