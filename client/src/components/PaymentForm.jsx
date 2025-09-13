@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import "./PaymentForm.css"
 
 export default function PaymentForm() {
   const [loading, setLoading] = useState(false);

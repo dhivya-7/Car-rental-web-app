@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import "./BookingPaymentPage.css";
 
 export default function BookingPaymentPage() {
   const location = useLocation();

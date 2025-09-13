@@ -4,7 +4,7 @@ import axios from "axios";
 import FeedbackForm from "./FeedbackForm";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./feedback.css";
+import "./Feedback.css";
 
 
 export default function FeedbackSection() {

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import BookingForm from "../components/BookingForm";
 import PaymentForm from "../components/PaymentForm";
 import CarCard from "../components/CarCard";
-import "./Cars.css";
+import "./CarsFilter.css";
 
 export default function CarsFilter() {
   const location = useLocation();
