@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { createBooking } from "../api";
-import "./src/components/BookingForm.css"
+import "./booking.css"
 
 export default function BookingForm({ prefillCar, onClose }) {
   const [pickupLocation, setPickupLocation] = useState("");
