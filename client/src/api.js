@@ -1,5 +1,5 @@
 
-const API_BASE = import.meta.env.VITE_API_BASE || "https://car-rental-backend-j1oi.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "https://car-rental-web-app.onrender.com/api";
 // Login
 export async function login(payload) {
   try {
