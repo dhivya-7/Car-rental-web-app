@@ -46,8 +46,8 @@ export default function BookingForm({ prefillCar, onClose }) {
     }
 
     const payload = {
-      carId: prefillCar?.id || null,
-      carName: prefillCar?.name || null,
+      carId: prefillCar?._id || null,
+     carName: prefillCar?.name || null,
       pickupLocation,
       dropoffLocation,
       pickupDate,

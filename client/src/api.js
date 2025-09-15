@@ -1,5 +1,5 @@
-
 const API_BASE = import.meta.env.VITE_API_BASE || "https://car-rental-web-app.onrender.com/api";
+
 // Login
 export async function login(payload) {
   try {
@@ -63,6 +63,7 @@ export async function createBooking(payload) {
     return { success: false, message: err.message };
   }
 }
+
 
 // Search bookings (available cars)
 export async function searchBookings(payload) {

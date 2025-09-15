@@ -1,22 +1,18 @@
 const Booking = require("../models/Booking");
 const Car = require("../models/Car");
 
-// Create booking
+//bookingController.js
 exports.createBooking = async (req, res) => {
   try {
-    const booking = await Booking.create({
-      ...req.body,
-      pickupDate: new Date(req.body.pickupDate),
-      dropoffDate: new Date(req.body.dropoffDate),
-    });
-
-    console.log("Booking saved:", booking);
-    res.status(201).json(booking);
+    const booking = await Booking.create(req.body);
+    console.log("✅ Booking saved:", booking);
+    res.status(201).json({ success: true, booking });
   } catch (err) {
-    console.error("Booking save error:", err.message);
-    res.status(500).json({ message: err.message });
+    console.error("❌ Booking save error:", err.message);
+    res.status(400).json({ success: false, message: err.message });
   }
 };
+
 
 // Search available cars
 exports.searchBookings = async (req, res) => {
