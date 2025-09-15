@@ -52,7 +52,7 @@ app.post("/create-checkout-session", async (req, res) => {
           price_data: {
             currency: "usd",
             product_data: { name: "Car Rental Payment" },
-            unit_amount: amount, // in cents
+            unit_amount: amount, 
           },
           quantity: 1,
         },
@@ -65,9 +65,9 @@ app.post("/create-checkout-session", async (req, res) => {
     console.log("✅ Stripe session created:", session.url);
     res.json({ url: session.url });
   } catch (err) {
-    console.error("❌ Stripe error:", err.message);
+    console.error(" Stripe error:", err.message);
     res.status(500).json({ error: err.message });
   }
 });
 
-app.listen(5000, () => console.log("🚀 Server running on port 5000"));
+app.listen(5000, () => console.log(" Server running on port 5000"));
