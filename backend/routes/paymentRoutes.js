@@ -14,7 +14,7 @@ router.post("/save", async (req, res) => {
       city,
       state,
       zip,
-      amount, // ✅ also save amount
+      amount, //  also save amount
       cardNumber: "**** **** **** ****", // masked for security
       expMonth: "XX",
       expYear: "XX",
@@ -30,5 +30,5 @@ router.post("/save", async (req, res) => {
   }
 });
 
-// ⚠️ Export the router
+// Export the router
 module.exports = router;
