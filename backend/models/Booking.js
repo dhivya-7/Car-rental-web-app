@@ -1,17 +1,20 @@
 const mongoose = require("mongoose");
 
-const bookingSchema = new mongoose.Schema({
-  carId: { type: mongoose.Schema.Types.ObjectId, ref: "Car", default: null },
-  carName: { type: String, default: null },
-  pickupLocation: { type: String, required: true },
-  dropoffLocation: { type: String, required: true },
-  pickupDate: { type: Date, required: true },
-  pickupTime: { type: String, required: true },
-  dropoffDate: { type: Date, required: true },
-  dropoffTime: { type: String, required: true },
-  driverAge: { type: Number },
-  promoCode: { type: String },
-  totalPrice: { type: Number, default: 0 },
-}, { timestamps: true });
+const BookingSchema = new mongoose.Schema(
+  {
+    carId: { type: mongoose.Schema.Types.ObjectId, ref: "Car", required: true },
+    carName: { type: String, required: true },
+    pickupLocation: { type: String, required: true },
+    dropoffLocation: { type: String, required: true },
+    pickupDate: { type: Date, required: true },
+    pickupTime: { type: String, required: true },
+    dropoffDate: { type: Date, required: true },
+    dropoffTime: { type: String, required: true },
+    driverAge: { type: Number, required: true },
+    promoCode: { type: String },
+    totalPrice: { type: Number, required: true },
+  },
+  { timestamps: true } // adds createdAt & updatedAt
+);
 
-module.exports = mongoose.model("Booking", bookingSchema);
+module.exports = mongoose.model("Booking", BookingSchema);

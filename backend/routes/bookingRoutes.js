@@ -1,81 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const bookingController = require("../controllers/bookingController");
 const Booking = require("../models/Booking");
-const Payment = require("../models/Payment");
 
-// ✅ Create booking + payment in one step
-router.post("/", async (req, res) => {
+// Create booking
+router.post("/create", async (req, res) => {
   try {
-    const {
-      carId,
-      carName,
-      pickupLocation,
-      dropoffLocation,
-      pickupDate,
-      pickupTime,
-      dropoffDate,
-      dropoffTime,
-      driverAge,
-      promoCode,
-      totalPrice,
-      // payment fields
-      fullName,
-      email,
-      address,
-      city,
-      state,
-      zip,
-      cardNumber,
-      expMonth,
-      expYear,
-      cvv,
-    } = req.body;
-
-    // 1. Save booking
-    const booking = new Booking({
-      carId,
-      carName,
-      pickupLocation,
-      dropoffLocation,
-      pickupDate,
-      pickupTime,
-      dropoffDate,
-      dropoffTime,
-      driverAge,
-      promoCode,
-      totalPrice,
-    });
+    const booking = new Booking(req.body);
     await booking.save();
-
-    // 2. Save payment linked to booking
-    const payment = new Payment({
-      fullName,
-      email,
-      address,
-      city,
-      state,
-      zip,
-      cardNumber,
-      expMonth,
-      expYear,
-      cvv,
-    });
-    await payment.save();
-
-    res.status(201).json({
+    res.json({
       success: true,
-      message: "Booking and payment saved successfully",
-      booking,
-      payment,
+      message: "Booking created successfully!",
+      data: booking
     });
   } catch (err) {
-    console.error("❌ Booking+Payment error:", err.message);
     res.status(500).json({ success: false, message: err.message });
   }
 });
 
-// ✅ Search available cars
-router.post("/search", bookingController.searchBookings);
+// Get all bookings
+router.get("/all", async (req, res) => {
+  try {
+    const bookings = await Booking.find();
+    res.json({ success: true, data: bookings });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+});
 
 module.exports = router;

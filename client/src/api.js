@@ -1,5 +1,6 @@
-const VITE_API_BASE="https://car-rental-backend-cxxi.onrender.com/api";
+const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:5000/api";
 
+// ----------------- AUTH -----------------
 
 // Login
 export async function login(payload) {
@@ -11,22 +12,16 @@ export async function login(payload) {
     });
 
     const data = await res.json();
+    if (!res.ok) return { success: false, message: data.message || "Login failed" };
 
-    if (!res.ok) {
-      return { success: false, message: data.message || "Login failed" };
-    }
-
-    if (data.token) {
-      localStorage.setItem("token", data.token);
-    }
-
+    if (data.token) localStorage.setItem("token", data.token);
     return { success: true, ...data };
   } catch (err) {
     return { success: false, message: err.message || "Network error" };
   }
 }
 
-// Register (Signup)
+// Register
 export async function register(payload) {
   try {
     const res = await fetch(`${API_BASE}/auth/register`, {
@@ -36,20 +31,17 @@ export async function register(payload) {
     });
 
     const data = await res.json();
+    if (!res.ok) return { success: false, message: data.message || "Register failed" };
 
-    if (!res.ok) {
-      // return backend message even on error
-      return { success: false, message: data.message || `Register failed: ${res.status}` };
-    }
-
-    // success
     return { success: true, message: data.message || "User registered successfully" };
   } catch (err) {
     return { success: false, message: err.message || "Network error" };
   }
 }
 
-// Create booking
+
+
+// ----------------- BOOKINGS -----------------
 export async function createBooking(payload) {
   try {
     const res = await fetch(`${API_BASE}/bookings`, {
@@ -57,7 +49,6 @@ export async function createBooking(payload) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-
     const data = await res.json();
     return res.ok ? { success: true, booking: data } : { success: false, message: data.message };
   } catch (err) {
@@ -65,20 +56,20 @@ export async function createBooking(payload) {
   }
 }
 
-
-// Search bookings (available cars)
-export async function searchBookings(payload) {
+// ----------------- PAYMENTS -----------------
+export async function savePayment(payload) {
   try {
-    const res = await fetch(`${API_BASE}/bookings/search`, {
+    const res = await fetch(`${API_BASE}/payment/save`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-
     const data = await res.json();
-    return res.ok ? data : { cars: [], message: data.message };
+    return res.ok ? { success: true, data: data.data } : { success: false, message: data.message };
   } catch (err) {
-    console.error("searchBookings error:", err);
-    return { cars: [], message: err.message };
+    return { success: false, message: err.message };
   }
 }
+
+
+
