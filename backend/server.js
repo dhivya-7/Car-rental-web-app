@@ -24,6 +24,14 @@ connectDB();
 
 const app = express();
 
+
+app.use(cors({
+  origin: process.env.CLIENT_URL, 
+  credentials: true
+}));
+
+
+
 // Middleware
 app.use(helmet());
 app.use(cors());
@@ -67,8 +75,9 @@ app.post("/api/create-checkout-session", async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: "http://localhost:3000/cancel",
+
+success_url: `${process.env.CLIENT_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+cancel_url: `${process.env.CLIENT_URL}/cancel`,
     });
 
     res.json({ url: session.url });
