@@ -1,0 +1,10 @@
+// src/config.js
+
+const API_BASE =
+  import.meta.env.VITE_API_BASE || "https://car-rental-backend-cxxi.onrender.com/api";
+
+const STRIPE_PUBLISHABLE_KEY =
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ||
+  "pk_test_51S64tBFL9IujdR9U9pDShIxWokgJtGAallCsfLM1vcL09XPE0dzPE14NoFM8EmeEXES0uAPVCj7PZF1O4chy1hPz00zPiN0osw";
+
+export { API_BASE, STRIPE_PUBLISHABLE_KEY };

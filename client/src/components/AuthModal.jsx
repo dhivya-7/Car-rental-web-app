@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { login, register } from "../api";
 
 export default function AuthModal({ open, onClose }) {
-  const [mode, setMode] = useState("signup"); 
+  const [mode, setMode] = useState("signup");
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -26,23 +26,23 @@ export default function AuthModal({ open, onClose }) {
         if (res.success) {
           localStorage.setItem("token", res.token);
           setMessage(`✅ Welcome back, ${res.user?.name || "User"}!`);
-          setTimeout(() => onClose(), 1000); // auto close modal
+          setTimeout(() => onClose(), 1000);
         } else {
-          setMessage(`❌ Login failed: ${res.message}`);
+          setMessage(`Login failed: ${res.message || "Unknown error"}`);
         }
       } else {
         res = await register(form);
 
         if (res.success) {
-          setMessage(`✅ ${res.message}`); // now message always defined
-          setMode("login"); // switch to login after signup
+          setMessage(`✅ ${res.message || "Signup successful"}`);
+          setMode("login");
           setForm({ name: "", email: "", password: "" });
         } else {
-          setMessage(`❌ Signup failed: ${res.message}`);
+          setMessage(`Signup failed: ${res.message || "Unknown error"}`);
         }
       }
     } catch (err) {
-      setMessage(`❌ Error: ${err.message || "Network error"}`);
+      setMessage(`Error: ${err.message || "Network error"}`);
     } finally {
       setLoading(false);
     }
